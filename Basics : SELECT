@@ -1,3 +1,22 @@
-USE 
-SAMPLEDB GO
-SELECT first_name,last_name FROM employees;
+Challenge:
+Use a SELECT statement to get the first_name and 
+last_name of all employees.
+
+SELECT first_name, last_name 
+FROM employees;
+
+Challenge:
+Use a SELECT statement to get the last_name and cityof 
+all customers. Alias the last_name to customer_last_name in 
+the query
+
+SELECT last_name AS customer_last_name,city
+FROM oes.employees;
+
+Challenge:
+Use a SELECT statement to select all columns from the 
+oes.order_items table
+
+SELECT * FROM oes.order_items;
+
+
