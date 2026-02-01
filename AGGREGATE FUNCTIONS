@@ -1,0 +1,15 @@
+MIN (prop_value) AS minimum_pop_value
+FROM properties;
+
+MAX (prop_value) AS minimum_pop_value
+FROM properties;
+
+SUM(prop_value) AS total_value
+FROM properties;
+
+AVG(prop_value) AS mean_prop_value
+FROM properties;
+
+SELECT 
+COUNT(suffix) AS count_suffix
+FROM properties;
