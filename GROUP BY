@@ -1,0 +1,4 @@
+SELECT 
+locality,species_id,MAX(date_of_count) AS date_of_recent_pop_count
+FROM bird.antarctic_populations
+GROUP BY locality,species_id;
