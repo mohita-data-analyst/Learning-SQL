@@ -1,0 +1,59 @@
+Return the owner count for properties which have more than one owner.
+
+SELECT
+ property_id, COUNT (*) AS owner_count
+FROM property_owners GROUP BY property_id
+HAVING COUNT (*) > 1;
+
+write a query that returns the average price for product categories that have an average price greater than $20. Exclude any products which have a category of 'unassigned'.
+order the query result by average price from highest to lowest.
+
+SELECT 
+ category AS product_category, AVG(price) AS average_price 
+FROM products 
+WHERE category <> 'unassigned'
+GROUP BY category 
+HAVING AVG(price) > 20 
+ORDER BY average_price desc;
+
+write a query to give the total number of employees in each department as given by the department_id column in the hcm.employees.
+
+SELECT *
+hcm.employees;
+
+SELECT department_id,COUNT(*) AS employee_count
+FROM hcm.employees
+GROUP BY department_id;
+
+Challenge:
+Write a query to give the average salary in each 
+department as given by the department_id column in the 
+hcm.employees table. Order the query result by average 
+salary from highest to lowest.
+
+SELECT department_id ,ROUND(AVG(salary),1) as avg_salary
+FROM hcm.employees
+GROUP BY department_id
+ORDER BY avg_salary DESC;
+
+Challenge:
+Write a query to give the total number of products on 
+hand at each warehouse as given by the warehouse_id
+column in the oes.inventories table. Also, limit the result 
+to only warehouses which have greater than 5,000 
+product items on hand.
+
+ 
+SELECT warehouse_id ,SUM(quantity_on_hand) as total_products_on_hand
+FROM oes.inventories
+GROUP BY warehouse_id
+HAVING SUM(quantity_on_hand) > 5000;
+
+What is the date of the most recent population count at 
+each locality in the bird.antarctic_populations table?
+
+SELECT
+locality,
+MAX(date_of_count) as most_recent_pop_count
+FROM bird.antarctic_population
+GROUP BY locality;
